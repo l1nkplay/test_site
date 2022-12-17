@@ -1,10 +1,13 @@
 /*============== contact_area css ================*/
+
 .contact_area {
 }
+
 .mapBox {
 	height: 420px;
-	margin-top: 80px;
+	margin-bottom: 80px;
 }
+
 .contact_info {
 	.info_item {
 		position: relative;
@@ -15,7 +18,7 @@
 			top: 0;
 			font-size: 20px;
 			line-height: 24px;
-			@extend .gradient-color;
+			color: $primary-color;
 			font-weight: 600;
 		}
 		h6 {
@@ -36,6 +39,7 @@
 		}
 	}
 }
+
 .contact_form {
 	.form-group {
 		margin-bottom: 10px;
@@ -62,13 +66,23 @@
 			}
 		}
 	}
-	.primary_btn {
+	.primary-btn {
 		margin-top: 20px;
+		border: 0;
+		padding: 8px 30px;
+		@extend .gradient-bg;
+		color: #fff;
+		letter-spacing: 1px;
+		@include transition();
+		&:hover {
+			background: $text-color;
+		}
 	}
 }
 
 /* Contact Success and error Area css
 ============================================================================================ */
+
 .modal-message {
 	.modal-dialog {
 		position: absolute;
@@ -108,5 +122,6 @@
 		}
 	}
 }
+
 /* End Contact Success and error Area css
 ============================================================================================ */

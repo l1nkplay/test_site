@@ -1,5 +1,6 @@
 //    Mixins
-@mixin transition($args: all 0.4s ease 0s) {
+
+@mixin transition($args: all 0.3s ease 0s) {
 	-webkit-transition: $args;
 	-moz-transition: $args;
 	-o-transition: $args;
@@ -27,16 +28,27 @@
 	transition-property: $args1, $args2;
 }
 
-@mixin border-gradient($deg, $args1, $args2) {
-	border-image: -webkit-linear-gradient($deg, $args1, $args2);
-	border-image: -moz-linear-gradient($deg, $args1, $args2);
-	border-image: -o-linear-gradient($deg, $args1, $args2);
-	border-image: linear-gradient($deg, $args1, $args2);
+// Placeholder Mixins
+
+@mixin placeholder {
+	&.placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&::-webkit-input-placeholder {
+		@content;
+	}
 }
 
-@mixin gradient($deg, $args1, $args2) {
+@mixin gradient($deg, $args1,$args2) {
 	background: -webkit-linear-gradient($deg, $args1, $args2);
 	background: -moz-linear-gradient($deg, $args1, $args2);
+	background: -ms-linear-gradient($deg, $args1, $args2);
 	background: -o-linear-gradient($deg, $args1, $args2);
 	background: linear-gradient($deg, $args1, $args2);
 }
@@ -47,6 +59,25 @@
 	background: -ms-linear-gradient($deg, $args1, $args2, $args3);
 	background: -o-linear-gradient($deg, $args1, $args2, $args3);
 	background: linear-gradient($deg, $args1, $args2, $args3);
+}
+
+@mixin gradient-text($color1, $color2) {
+	background-image: -webkit-linear-gradient(left, $color1, $color2);
+	background-image: -moz-linear-gradient(left, $color1, $color2);
+	background-image: -ms-linear-gradient(left, $color1, $color2);
+	background-image: -o-linear-gradient(left, $color1, $color2);
+	background-image: linear-gradient(to right, $color1, $color2);
+	color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
+}
+
+@mixin filter ($filter-value) {
+	filter: ($filter-value);
+	-o-filter: ($filter-value);
+	-ms-filter: ($filter-value);
+	-moz-filter: ($filter-value);
+	-webkit-filter: ($filter-value);
 }
 
 @mixin transform($transform) {
@@ -77,14 +108,6 @@
 	#{$property}: calc(#{$expression});
 }
 
-@mixin filter ($value) {
-	filter: $value;
-	-o-filter: $value;
-	-ms-filter: $value;
-	-moz-filter: $value;
-	-webkit-filter: $value;
-}
-
 @mixin keyframes ($animation-name) {
 	@-webkit-keyframes #{$animation-name} {
 		@content;
@@ -100,22 +123,6 @@
 	}
 }
 
-// Placeholder Mixins
-@mixin placeholder {
-	&.placeholder {
-		@content;
-	}
-	&:-moz-placeholder {
-		@content;
-	}
-	&::-moz-placeholder {
-		@content;
-	}
-	&::-webkit-input-placeholder {
-		@content;
-	}
-}
-
 @mixin animation ($args) {
 	-webkit-animation: $args;
 	-moz-animation: $args;
@@ -123,32 +130,28 @@
 	animation: $args;
 }
 
-/* Medium Layout: 1280px */
-
+// Medium Layout: 1280px
 @mixin medium {
 	@media (min-width: 992px) and (max-width: 1400px) {
 		@content;
 	}
 }
 
-/* Tablet Layout: 768px */
-
+// Tablet Layout: 768px
 @mixin tablet {
 	@media (min-width: 768px) and (max-width: 1200px) {
 		@content;
 	}
 }
 
-/* Mobile Layout: 320px */
-
+// Mobile Layout: 320px
 @mixin mobile {
 	@media (max-width: 767px) {
 		@content;
 	}
 }
 
-/* Wide Mobile Layout: 480px */
-
+// Wide Mobile Layout: 480px
 @mixin wide-mobile {
 	@media (min-width: 480px) and (max-width: 767px) {
 		@content;

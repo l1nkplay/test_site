@@ -1,21 +1,29 @@
-body {
-	line-height: 26px;
-	font-size: 15px;
-	font-family: $primary-font;
+::-webkit-input-placeholder {
+	/* WebKit, Blink, Edge */
+	color: #999999;
 	font-weight: 400;
-	color: $text-color;
-	background: url(../img/body-bg.png) no-repeat center;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: $title-font;
-	font-weight: 500;
-	color: $title-color;
+:-moz-placeholder {
+	/* Mozilla Firefox 4 to 18 */
+	color: #999999;
+	opacity: 1;
+	font-weight: 400;
+}
+::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	color: #999999;
+	opacity: 1;
+	font-weight: 400;
+}
+:-ms-input-placeholder {
+	/* Internet Explorer 10-11 */
+	color: #999999;
+	font-weight: 400;
+}
+::-ms-input-placeholder {
+	/* Microsoft Edge */
+	color: #999999;
+	font-weight: 400;
 }
 
 .list {
@@ -33,38 +41,54 @@ a {
 		outline: none;
 	}
 }
+.row.m0 {
+	margin: 0px;
+}
+
+body {
+	line-height: 24px;
+	font-size: 14px;
+	font-family: $primary-font;
+	font-weight: 300;
+	color: $text-color;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $title-font;
+	font-weight: 700;
+	color: $title-color;
+}
 
 button:focus {
 	outline: none;
 	box-shadow: none;
 }
 
+.mb-20 {
+	margin-bottom: 20px;
+}
+.mb-30 {
+	margin-bottom: 30px;
+}
+.mb-40 {
+	margin-bottom: 40px;
+}
+
+.ml-20 {
+	margin-left: 20px;
+}
+
 .mt-25 {
 	margin-top: 25px;
 }
-
-.p0 {
-	padding-left: 0px;
-	padding-right: 0px;
+.mt-30 {
+	margin-top: 30px;
 }
 
 .white_bg {
 	background: #fff !important;
-}
-
-// Margin Bottom
-.mb-50 {
-	margin-bottom: 50px;
-}
-
-// Margin Left
-.ml-15 {
-	margin-left: 15px;
-}
-.ml-20 {
-	margin-left: 20px;
-}
-// Margin Top
-.mt-50 {
-	margin-top: 50px;
 }

@@ -1,183 +1,6 @@
-/* Latest Blog Area css
-============================================================================================ */
-//.latest_blog_area{
-//
-//}
-//.latest_blog_inner{
-//
-//}
-//.l_blog_item{
-//	.l_blog_img{
-//
-//	}
-//	.l_blog_text{
-//		.date{
-//			margin-top: 24px;
-//			margin-bottom: 15px;
-//			a{
-//				color: $text-color;
-//				font-size: 12px;
-//				font-family: $primary-font;
-//			}
-//		}
-//		h4{
-//			font-size: 21px;
-//			color: $title-color;
-//			margin-bottom: 20px;
-//			@include transition;
-//			font-family: $title-font;
-//			font-weight: bold;
-//			text-transform: uppercase;
-//			max-width: 300px;
-//			&:hover{
-//				color: $primary-color;
-//			}
-//		}
-//		p{
-//			margin-bottom: 0px;
-//			font-size: 14px;
-//			font-family: $primary-font;
-//		}
-//	}
-//}
-/* End Latest Blog Area css
-============================================================================================ */
-
-.blog_btn {
-	border: 1px solid #eeeeee;
-	background: #f9f9ff;
-	padding: 0px 32px;
-	font-size: 13px;
-	font-weight: 500;
-	font-family: $primary-font;
-	color: $title-color;
-	line-height: 34px;
-	display: inline-block;
-	&:hover {
-		background: $primary-color;
-		border-color: $primary-color;
-		color: #fff;
-	}
-}
-
-.white_bg_btn {
-	background: #fff;
-	display: inline-block;
-	color: $title-color;
-	line-height: 40px;
-	padding: 0px 28px;
-	font-size: 14px;
-	font-family: $primary-font;
-	font-weight: 500;
-	text-transform: uppercase;
-	@include transition;
-	border: none;
-	&:hover {
-		background: $primary-color;
-		color: #fff;
-	}
-}
-
-/* Causes Area css
-============================================================================================ */
-.causes_area {
-}
-.causes_slider {
-	.owl-dots {
-		text-align: center;
-		margin-top: 80px;
-		.owl-dot {
-			height: 14px;
-			width: 14px;
-			background: #eeeeee;
-			display: inline-block;
-			margin-right: 7px;
-			&:last-child {
-				margin-right: 0px;
-			}
-			&.active {
-				background: $primary-color;
-			}
-		}
-	}
-}
-.causes_item {
-	background: #fff;
-	.causes_img {
-		position: relative;
-		.c_parcent {
-			position: absolute;
-			bottom: 0px;
-			width: 100%;
-			left: 0px;
-			height: 3px;
-			background: rgba(255, 255, 255, .5);
-			span {
-				width: 70%;
-				height: 3px;
-				background: $primary-color;
-				position: absolute;
-				left: 0px;
-				bottom: 0px;
-				&:before {
-					content: "75%";
-					position: absolute;
-					right: -10px;
-					bottom: 0px;
-					background: $primary-color;
-					color: #fff;
-					padding: 0px 5px;
-				}
-			}
-		}
-	}
-	.causes_text {
-		padding: 30px 35px 40px 30px;
-		h4 {
-			color: $title-color;
-			font-family: $primary-font;
-			font-size: 18px;
-			font-weight: 600;
-			margin-bottom: 15px;
-			cursor: pointer;
-			&:hover {
-				color: $primary-color;
-			}
-		}
-		p {
-			font-size: 14px;
-			line-height: 24px;
-			color: $text-color;
-			font-weight: 300;
-			margin-bottom: 0px;
-		}
-	}
-	.causes_bottom {
-		a {
-			width: 50%;
-			border: 1px solid $primary-color;
-			text-align: center;
-			float: left;
-			line-height: 50px;
-			background: $primary-color;
-			color: #fff;
-			font-family: $primary-font;
-			font-size: 14px;
-			font-weight: 500;
-			& + a {
-				border-color: #eeeeee;
-				background: #fff;
-				font-size: 14px;
-				color: $title-color;
-			}
-		}
-	}
-}
-/* End Causes Area css
-============================================================================================ */
-
 /*================= latest_blog_area css =============*/
 .latest_blog_area {
+	background: #f9f9ff;
 }
 .single-recent-blog-post {
 	margin-bottom: 30px;
@@ -230,12 +53,17 @@
 
 /*========= blog_categorie_area css ===========*/
 .blog_categorie_area {
+	padding-top: 80px;
 	padding-bottom: 80px;
 }
 .categories_post {
 	position: relative;
 	text-align: center;
 	cursor: pointer;
+	@media (max-width: 991px) {
+		max-width: 360px;
+		margin: 0 auto;
+	}
 	img {
 		max-width: 100%;
 	}
@@ -258,13 +86,21 @@
 			text-transform: uppercase;
 			color: #fff;
 			position: relative;
+			//			&:before{
+			//				content: "";
+			//				height: 1px;
+			//				width: 100%;
+			//				background: #fff;
+			//				position: absolute;
+			//				bottom: 0px;
+			//				left: 0px;
+			//			}
 		}
 		p {
 			font-weight: 300;
 			font-size: 14px;
 			line-height: 26px;
 			margin-bottom: 0px;
-			@include transition();
 		}
 		.border_line {
 			margin: 10px 0px;
@@ -275,7 +111,9 @@
 	}
 	&:hover {
 		.categories_details {
-			background: rgba($primary-color, 0.85);
+			@extend .gradient-bg;
+			background-color: transparent;
+			opacity: .5;
 		}
 	}
 }
@@ -330,9 +168,6 @@
 	img {
 		max-width: 100%;
 	}
-	.primary_btn {
-		line-height: 38px;
-	}
 }
 .blog_details {
 	padding-top: 20px;
@@ -362,7 +197,6 @@
 
 .blog_right_sidebar {
 	border: 1px solid #eeeeee;
-	background: #fafaff;
 	padding: 30px;
 	.widget_title {
 		font-size: 18px;
@@ -376,34 +210,18 @@
 	.search_widget {
 		.input-group {
 			.form-control {
-				position: relative;
 				font-size: 14px;
 				line-height: 29px;
+				border: 0px;
 				width: 100%;
 				font-weight: 300;
-				color: #777777;
+				color: #fff;
 				padding-left: 20px;
 				border-radius: 45px;
 				z-index: 0;
-				border: double 2px transparent;
-				background-image: linear-gradient(white, white),
-					radial-gradient(circle at top left, $primary-color, $primary-color2);
-				background-image: -webkit-linear-gradient(white, white),
-					-webkit-radial-gradient(circle at top left, $primary-color, $primary-color2);
-				background-image: -moz-linear-gradient(white, white),
-					-moz-radial-gradient(circle at top left, $primary-color, $primary-color2);
-				background-image: -ms-linear-gradient(white, white),
-					-ms-radial-gradient(circle at top left, $primary-color, $primary-color2);
-				background-image: -o-linear-gradient(white, white),
-					-o-radial-gradient(circle at top left, $primary-color, $primary-color2);
-				background-origin: border-box;
-				background-clip: content-box, border-box;
-				padding: 0;
-				text-indent: 20px;
+				@extend .gradient-bg;
 				@include placeholder {
-					color: #777777;
-					text-transform: uppercase;
-					font-size: 12px;
+					color: #fff;
 				}
 				&:focus {
 					box-shadow: none;
@@ -416,11 +234,10 @@
 				border: 0px;
 				box-shadow: none;
 				font-size: 14px;
-				color: #000000;
-				font-weight: 600;
+				color: #fff;
 				padding: 0px;
 				top: 50%;
-				@include transform(translateY(-50%));
+				transform: translateY(-50%);
 				z-index: 1;
 			}
 		}
@@ -497,12 +314,10 @@
 					padding-top: 15px;
 				}
 				&:hover {
+					border-color: $primary-color;
 					a {
 						color: $primary-color;
 					}
-				}
-				&:hover {
-					border-color: $primary-color;
 				}
 			}
 		}
@@ -647,7 +462,7 @@
 				font-size: 14px;
 				transition: all 0.2s linear;
 				&:hover {
-					color: $primary-color;
+					color: $title-color;
 				}
 			}
 		}
@@ -756,7 +571,6 @@
 }
 
 .comments-area {
-	background: #fafaff;
 	border: 1px solid #eee;
 	padding: 50px 30px;
 	margin-top: 50px;
@@ -820,20 +634,17 @@
 		font-weight: 600;
 		@include transition();
 		&:hover {
-			border: transparent;
-			@extend .gradient-bg;
+			background-color: $primary-color;
 			color: #fff;
 		}
 	}
 }
 
 .comment-form {
-	background: #fafaff;
 	text-align: center;
 	border: 1px solid #eee;
 	padding: 47px 30px 43px;
 	margin-top: 50px;
-	margin-bottom: 40px;
 	h4 {
 		text-align: center;
 		margin-bottom: 50px;
@@ -857,12 +668,11 @@
 	.form-control {
 		padding: 8px 20px;
 		background: #fff;
-		border: none;
+		border: 1px solid #eee;
 		border-radius: 0px;
 		width: 100%;
 		font-size: 14px;
 		color: #777777;
-		border: 1px solid transparent;
 		&:focus {
 			box-shadow: none;
 			border: 1px solid #eee;
@@ -872,6 +682,18 @@
 		&.form-control {
 			height: 140px;
 			resize: none;
+		}
+	}
+	.primary-btn {
+		margin-top: 20px;
+		border: 0;
+		padding: 8px 30px;
+		@extend .gradient-bg;
+		color: #fff;
+		letter-spacing: 1px;
+		@include transition();
+		&:hover {
+			background: $text-color;
 		}
 	}
 	::-webkit-input-placeholder {
